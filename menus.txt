@@ -1,0 +1,23 @@
+gerente 
+- serviços
+- clientes
+- agendamentos
+- mecânicos
+- notificações
+
+- lista de agendamentos do dia
+
+
+
+mecanico
+- lista de serviços em aberto
+- lista de serviços em andamento
+- lista de serviços encerrados
+- notificações
+
+
+clientes
+- tempo para começar
+- tempo para terminar
+- agendamentos
+- notificações
