@@ -24,8 +24,9 @@ function verificarAutenticacao() {
             }
         })
         .then(data => {
-            if(data.name){
+            if(data.name || data.id){
                 localStorage.setItem('profile_name', data.name);
+                localStorage.setItem('id', data.id);
                 document.getElementById("profile_name").innerHTML = data.name;
             }
         })

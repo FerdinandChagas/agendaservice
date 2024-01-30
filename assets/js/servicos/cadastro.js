@@ -7,6 +7,7 @@ document.getElementById('cad_servico').addEventListener('submit', function(event
     var valor_estimado = document.getElementById('valor_estimado').value;
 
     var token = localStorage.getItem('token'); // Obtém o token do armazenamento local
+    var user_id = localStorage.getItem('id');
 
     // Verifica se o token está presente
     if (token) {
@@ -23,13 +24,15 @@ document.getElementById('cad_servico').addEventListener('submit', function(event
                 expected_start_time: "00:00:00",
                 expected_end_time: tempo_estimado,
                 value: valor_estimado,
-                created_by: '667a4e49-6357-4da1-a97e-fb620074401c'
+                created_by: user_id
             })
+            
         })
         .then(data => {
             // Verifica se a autenticação foi bem-sucedida
-            window.location.href = 'list_services.html';
-            console.log('Nova categoria cadastrada!');
+            if(data){
+                window.location.href = 'list_services.html';
+            }
         })
         .catch(error => {
             console.error('Erro ao fazer login:', error);
