@@ -376,37 +376,42 @@
           <div class="row">
 
             <!-- Recent Solicitações -->
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Cadastrar Serviço</h5>
-  
-                <!-- Vertical Form -->
-                <form id="cad_servico" class="row g-3">
-                  <div class="col-12">
-                    <label for="inputNanme4" class="form-label">Serviço</label>
-                    <input type="text" class="form-control" id="nome">
-                  </div>
-                  <div class="col-12">
-                    <label for="inputEmail4" class="form-label">Descrição</label>
-                    <input type="text" class="form-control" id="descricao">
-                  </div>
-                  <div class="col-12">
-                    <label for="inputPassword4" class="form-label">Tempo Estimado</label>
-                    <input type="text" class="form-control" id="tempo_estimado">
-                  </div>
-                  <div class="col-12">
-                    <label for="inputPassword4" class="form-label">Valor Estimado</label>
-                    <input type="text" class="form-control" id="valor_estimado">
-                  </div>
-                  <div class="text-center">
-                    <button type="submit" class="btn btn-primary">Cadastrar</button>
-                    <button type="reset" class="btn btn-secondary">Limpar</button>
-                  </div>
-                </form><!-- Vertical Form -->
-  
+            <div class="col-12">
+              <div class="card recent-sales overflow-auto">
+
+                <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Filter</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" href="#">Hoje</a></li>
+                    <li><a class="dropdown-item" href="#">Esse Mês</a></li>
+                    <li><a class="dropdown-item" href="#">Esse Ano</a></li>
+                  </ul>
+                </div>
+
+                <div class="card-body">
+                  <h5 class="card-title">Serviços Cadastrados</h5>
+
+                  <table class="table table-borderless">
+                    <thead>
+                        <tr>
+                            <th scope="col">Serviço</th>
+                            <th scope="col">Descrição</th>
+                            <th scope="col">Tempo Estimado</th>
+                            <th scope="col">Valor Estimado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="dados">
+                    </tbody>
+                </table>
+                
+                </div>
+
               </div>
-            </div>
-            <!-- End Recent Solicitações -->
+            </div><!-- End Recent Solicitações -->
 
        
           </div>
@@ -414,16 +419,7 @@
 
         <!-- Right side columns -->
         <div class="col-lg-4">
-
-          <!-- Recentes-->
-          
-          <!-- End Recentes-->
-
-          <!-- Budget Report -->
-          
-
-          <!-- News & Updates Traffic -->
-         
+             
         </div><!-- End Right side columns -->
 
       </div>
@@ -459,7 +455,8 @@
 
   <!-- Project JS Files -->
   <script src="assets/js/me.js"></script>
-  <script src="assets/js/servicos/cadastro.js"></script>
+  <script src="assets/js/clientes/listagem.js"></script>
+  
 
 </body>
 
