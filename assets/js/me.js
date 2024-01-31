@@ -27,6 +27,7 @@ function verificarAutenticacao() {
             if(data.name || data.id){
                 localStorage.setItem('profile_name', data.name);
                 localStorage.setItem('id', data.id);
+                localStorage.setItem('groups', data.groups);
                 document.getElementById("profile_name").innerHTML = data.name;
             }
         })

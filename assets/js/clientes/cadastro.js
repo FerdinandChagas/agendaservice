@@ -34,7 +34,7 @@ document.getElementById('cad_clientes').addEventListener('submit', function(even
         .then(response => response.json())
         .then(data => {
             // Verifica se a autenticação foi bem-sucedida
-            if (response.ok) {
+            if (data) {
                 window.location.href = 'list_clientes.html';
                 console.log('Novo cliente cadastrado!');
             } else {
