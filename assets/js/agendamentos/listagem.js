@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     if (token) {
         // Fazendo uma solicitação GET para a API de categorias
-        fetch('http://localhost:8000/api/agendamentos/servicos/', {
+        fetch('http://localhost:8000/api/agendamentos/fila/', {
             method: 'GET',
             headers: {
                 'Content-Type': 'application/json',
@@ -21,12 +21,13 @@ document.addEventListener("DOMContentLoaded", function() {
             // Verifica se o elemento com ID 'dados' existe
             if (dadosTbody) {
                 // Itera sobre a lista de categorias e insere cada categoria na tabela
-                data.forEach(servico => {
+                data.forEach(agendamento => {
                     const newRow = dadosTbody.insertRow();
-                    newRow.innerHTML = `<td class="text-primary">${servico.name}</td>
-                                       <td class="text-primary">${servico.description}</td>
-                                       <td class="text-primary">${servico.expected_end_time}</td></tr>
-                                       <td class="text-primary">R$ ${servico.value}</td>`;
+                    newRow.innerHTML = `<td class="text-primary">${agendamento.date}</td>
+                                       <td class="text-primary">${agendamento.client_name}</td>
+                                       <td class="text-primary">${agendamento.position}</td>
+                                       <td class="text-primary">${agendamento.total_cost}</td>
+                                       <td class="text-primary"></td></tr>`;
                 });
             } else {
                 console.error("Elemento com ID 'dados' não encontrado no DOM.");
