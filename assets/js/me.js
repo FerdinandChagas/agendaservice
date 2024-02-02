@@ -1,3 +1,5 @@
+const API_HOST="http://localhost:8000/" //https://ec2-18-223-205-175.us-east-2.compute.amazonaws.com/"
+
 // Função para verificar se o usuário está autenticado
 function verificarAutenticacao() {
     var token = localStorage.getItem('token'); // Obtém o token do armazenamento local
@@ -6,7 +8,7 @@ function verificarAutenticacao() {
     if (token) {
         // Se o token estiver presente, você pode fazer solicitações autenticadas para a API
         // Exemplo de uma solicitação GET autenticada usando o token no cabeçalho
-        fetch('http://localhost:8000/api/users/me', {
+        fetch(API_HOST+'api/users/me', {
             method: 'GET',
             headers: {
                 'Authorization': 'Token ' + token // Inclui o token no cabeçalho da solicitação

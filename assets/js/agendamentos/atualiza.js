@@ -25,9 +25,24 @@ function handleButtonClick(event) {
         .then(response => {
             // Verifica se a solicitação foi bem-sucedida com base no status da resposta
             if (response.ok) {
-                window.location.href = 'list_agendamentos.html';
+
+                fetch('http://localhost:8000/api/agendamentos/fila/atualiza/?agendamento=' + data_id, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Token ' + token
+                    }
+                }).then(response2 =>{
+                    if (response2.ok){
+                        window.location.href = 'list_agendamentos.html';        
+                    } else {
+                        throw new Error('Falha ao tentar atualizar a lista.  Status: '+response2.status);
+                    }
+                })
+
+                
             } else {
-                throw new Error('Falha ao processar a solicitação. Status: ' + response.status);
+                throw new Error('Falha ao tentar mudar o status do agendamento. Status: ' + response.status);
             }
         })
         .catch(error => {

@@ -1,3 +1,5 @@
+const API_HOST="http://localhost:8000/" //https://ec2-18-223-205-175.us-east-2.compute.amazonaws.com/"
+
 document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
@@ -5,7 +7,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
     var password = document.getElementById('password').value;
 
     // Fazendo uma solicitação POST para a API de autenticação
-    fetch('http://localhost:8000/auth-token/', {
+    fetch(API_HOST+'auth-token/', {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json'
@@ -23,7 +25,7 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
             console.log('Autenticação bem-sucedida! Token: ' + data.token);
             let token = localStorage.getItem('token');
             if (token){
-                fetch('http://localhost:8000/api/users/me', {
+                fetch(API_HOST+'api/users/me', {
                     method: 'GET',
                     headers: {
                         'Content-Type': 'application/json',
