@@ -28,7 +28,6 @@
 
   <!-- Template Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
-  <script src="assets/js/me.js"></script>
   
 </head>
 
@@ -583,52 +582,19 @@
                 <div class="card-body">
                   <h5 class="card-title">Agendamentos Recentes  <span>| Hoje</span></h5>
 
-                  <table class="table table-borderless datatable">
+                  <table class="table table-striped">
                     <thead>
                       <tr>
-                        <th scope="col">#</th>
-                        <th scope="col">Mecânico</th>
-                        <th scope="col">Carro</th>
-                        <th scope="col">Orçamento</th>
-                        <th scope="col">Status</th>
+                        <th scope="col">Data</th>
+                        <th scope="col">Nome</th>
+                        <th scope="col">Posição</th>
+                        <th scope="col">Custo Estimado</th>
+                        <th scope="col">Tempo Estimado</th>
+                        <th scope="col">Situação</th>
                       </tr>
                     </thead>
-                    <tbody>
-                      <tr>
-                        <th scope="row"><a href="#">#2457</a></th>
-                        <td>Carlos Mendes</td>
-                        <td><a href="#" class="text-primary">Chevrolet S10 - Placa: CHV-1234</a></td>
-                        <td>R$ 364</td>
-                        <td><span class="badge bg-success">Aprovado</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#2147</a></th>
-                        <td>Marcelo Santos</td>
-                        <td><a href="#" class="text-primary">Microônibus Mercedes - Placa: MCB-5678</a></td>
-                        <td>R$ 247</td>
-                        <td><span class="badge bg-warning">Pendente</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#2049</a></th>
-                        <td>André Costa</td>
-                        <td><a href="#" class="text-primary">Ford Ranger - Placa: FRD-9012</a></td>
-                        <td>R$ 447</td>
-                        <td><span class="badge bg-success">Aprovado</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#2644</a></th>
-                        <td>Lucas Torres</td>
-                        <td><a href="#" class="text-primar">Ônibus Mercedes - Placa: MBU-3456</a></td>
-                        <td>R$ 567</td>
-                        <td><span class="badge bg-danger">Recusado</span></td>
-                      </tr>
-                      <tr>
-                        <th scope="row"><a href="#">#2644</a></th>
-                        <td>Luiz Pereira</td>
-                        <td><a href="#" class="text-primary">Chevrolet S10 - Placa: CHV-7890</a></td>
-                        <td>R$ 265</td>
-                        <td><span class="badge bg-success">Aprovado</span></td>
-                      </tr>
+                    <tbody id="dados">
+                      
                     </tbody>
                   </table>
 
@@ -826,6 +792,8 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/me.js"></script>
+  <script src="assets/js/agendamentos/listagem.js"></script>
 
 </body>
 

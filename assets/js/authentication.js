@@ -1,4 +1,4 @@
-document.getElementById('meuBotao').addEventListener('click', function(event) {
+document.getElementById('loginForm').addEventListener('submit', function(event) {
     event.preventDefault();
 
     var username = document.getElementById('username').value;
@@ -21,6 +21,41 @@ document.getElementById('meuBotao').addEventListener('click', function(event) {
         if (data.token) {
             localStorage.setItem('token', data.token);
             console.log('Autenticação bem-sucedida! Token: ' + data.token);
+            let token = localStorage.getItem('token');
+            if (token){
+                fetch('http://localhost:8000/api/users/me', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': 'Token ' + token // Inclui o token no cabeçalho da solicitação
+                    }
+                })
+                .then(response => response.json())
+                .then(data => {
+                    // Verifica se a autenticação foi bem-sucedida
+                    if (data) {
+                        localStorage.setItem('groups', data.groups);
+                        console.log(data.groups[0]);
+                        if (data.groups.includes(8)){
+                            console.log("Eh cliente");
+                            localStorage.setItem('cpf', data.cpf)
+                            console.log(localStorage.getItem('cpf'))
+                            window.location.href = 'home_cliente.html';
+                        }else if (data.groups.includes(6)){
+                            window.location.href = 'home.html';
+                            console.log("Eh gerente");
+                        }else{
+                            console.log("Eh admin");
+                        }
+                    } else {
+                        // Se a autenticação falhar, exibe uma mensagem de erro
+                        alert("Erro!", "Nome de usuário ou senha incorretos", "error");
+                    }
+                })
+                .catch(error => {
+                    console.error('Erro ao fazer login:', error);
+                });
+            }
         } else {
             // Se a autenticação falhar, exibe uma mensagem de erro
             swal("Erro!", "Nome de usuário ou senha incorretos", "error");
@@ -29,38 +64,5 @@ document.getElementById('meuBotao').addEventListener('click', function(event) {
     .catch(error => {
         console.error('Erro ao fazer login:', error);
     });
-
-    let token = localStorage.getItem('token');
-    if (token){
-        fetch('http://localhost:8000/api/users/me', {
-            method: 'GET',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': 'Token ' + token // Inclui o token no cabeçalho da solicitação
-            }
-        })
-        .then(response => response.json())
-        .then(data => {
-            // Verifica se a autenticação foi bem-sucedida
-            if (data) {
-                localStorage.setItem('groups', data.groups);
-                console.log(data.groups[0]);
-                if (data.groups.includes(8)){
-                    console.log("Eh cliente");
-                    window.location.href = 'home_cliente.html';                    
-                }else if (data.groups.includes(6)){
-                    window.location.href = 'home.html';
-                    console.log("Eh gerente");
-                }else{
-                    console.log("Eh admin");
-                }
-            } else {
-                // Se a autenticação falhar, exibe uma mensagem de erro
-                alert("Erro!", "Nome de usuário ou senha incorretos", "error");
-            }
-        })
-        .catch(error => {
-            console.error('Erro ao fazer login:', error);
-        });
-    }
+    
 });

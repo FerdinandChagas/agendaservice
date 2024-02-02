@@ -23,10 +23,12 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Itera sobre a lista de categorias e insere cada categoria na tabela
                 data.data.forEach(mecanico => {
                     const newRow = dadosTbody.insertRow();
-                    newRow.innerHTML = `<td class="text-primary">${mecanico.name}</td>
-                                       <td class="text-primary">${mecanico.email}</td>
-                                       <td class="text-primary">${mecanico.cpf}</td>
-                                       <td class="text-primary">${mecanico.telefone}</td>`;
+                    newRow.innerHTML = `<td>${mecanico.name}</td>
+                                       <td>${mecanico.email}</td>
+                                       <td>${mecanico.cpf}</td>
+                                       <td>${mecanico.telefone}</td>
+                                       <td><button class="btn btn-danger btn-sm"><i id="bt_cancela" data-id="${mecanico.id}"class="bi bi-backspace-reverse-fill"></i></button>
+                                       </td></tr>`;
                 });
             } else {
                 console.error("Elemento com ID 'dados' não encontrado no DOM.");

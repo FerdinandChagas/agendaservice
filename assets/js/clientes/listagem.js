@@ -23,10 +23,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Itera sobre a lista de categorias e insere cada categoria na tabela
                 data.data.forEach(cliente => {
                     const newRow = dadosTbody.insertRow();
-                    newRow.innerHTML = `<td class="text-primary">${cliente.name}</td>
-                                       <td class="text-primary">${cliente.email}</td>
-                                       <td class="text-primary">${cliente.cpf}</td>
-                                       <td class="text-primary">${cliente.telefone}</td>`;
+                    newRow.innerHTML = `<td>${cliente.name}</td>
+                                       <td>${cliente.email}</td>
+                                       <td>${cliente.cpf}</td>
+                                       <td>${cliente.telefone}</td>
+                                       <td>
+                                       <button id="cancelar" data-id="${cliente.profile_id}" class="btn btn-danger btn-sm"><i id="bt_cancela" class="bi bi-backspace-reverse-fill"></i></button>
+                                       </td></tr>`;
                     console.log(cliente.name);
                 });
             } else {

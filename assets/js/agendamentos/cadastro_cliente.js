@@ -45,7 +45,6 @@ document.getElementById('cad_agendamento').addEventListener('submit', function(e
     event.preventDefault();
 
     var date = document.getElementById('date').value;
-    var cpf = document.getElementById('cpf').value;
     var tempo_estimado = document.getElementById('total_expected_time').value;
     var valor_estimado = document.getElementById('total_cost').value;
 
@@ -61,7 +60,8 @@ document.getElementById('cad_agendamento').addEventListener('submit', function(e
 
     var token = localStorage.getItem('token'); // Obtém o token do armazenamento local
     var user_id = localStorage.getItem('id');
-
+    var cpf = localStorage.getItem('cpf');
+    console.log(cpf);
     // Verifica se o token está presente
     if (token) {
         // Fazendo uma solicitação POST para a API de autenticação
@@ -83,7 +83,7 @@ document.getElementById('cad_agendamento').addEventListener('submit', function(e
         .then(data => {
             // Verifica se a autenticação foi bem-sucedida
             if(data){
-                window.location.href = 'list_agendamentos.html';
+                window.location.href = 'list_agendamentos_cliente.html';
             }
         })
         .catch(error => {

@@ -17,23 +17,26 @@ document.addEventListener("DOMContentLoaded", function() {
             return response.json();
         })
         .then(data => {
-            const dadosTbody = document.getElementById("dados");
+            const dadosTbody = document.getElementById("agendamentos");
+            let h6posicao = document.getElementById("posicao_fila");
+            let h6tempo = document.getElementById("est_tempo");
             // Verifica se o elemento com ID 'dados' existe
             if (dadosTbody) {
                 // Itera sobre a lista de categorias e insere cada categoria na tabela
                 data.data.forEach(agendamento => {
                     const newRow = dadosTbody.insertRow();
                     newRow.innerHTML = `<td>${agendamento.date}</td>
-                                       <td>${agendamento.client_name}</td>
                                        <td>${agendamento.position}</td>
                                        <td>${agendamento.total_cost}</td>
                                        <td>${agendamento.total_expected_time}</td>
                                        <td>${agendamento.status}</td>
                                        <td>
-                                        <button id="concluir" data-id="${agendamento.id}" class="btn btn-primary btn-sm"><i id="bt_finaliza" class="bi bi-check2-square"></i> </button>
-                                        <button id="cancelar" data-id="${agendamento.id}" class="btn btn-danger btn-sm"><i id="bt_cancela" class="bi bi-backspace-reverse-fill"></i></button>
-                                       </td>`;
+                                        <button id="cancelar" class="btn btn-danger btn-sm"><i id="bt_cancela" data-id="${agendamento.id}"class="bi bi-backspace-reverse-fill"></i></button>
+                                       </td></tr>`;
+                    h6posicao.textContent = agendamento.position;
+                    h6tempo.textContent = agendamento.total_expected_time
                 });
+                
             } else {
                 console.error("Elemento com ID 'dados' não encontrado no DOM.");
             }
