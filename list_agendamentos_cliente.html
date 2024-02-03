@@ -205,8 +205,8 @@
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>Kevin Anderson</h6>
-              <span>Web Designer</span>
+              <h6 id="profile_name"></h6>
+              <span></span>
             </li>
             <li>
               <hr class="dropdown-divider">
@@ -285,11 +285,7 @@
               <i class="bi bi-circle"></i><span>Cadastrar Agendamento</span>
             </a>
           </li>
-          <li>
-            <a href="">
-              <i class="bi bi-circle"></i><span>Ordens de Serviço</span>
-            </a>
-          </li>
+          
         </ul>
       </li><!-- End Forms Nav -->
     </ul>
@@ -343,9 +339,10 @@
                             <th scope="col">Custo Estimado</th>
                             <th scope="col">Tempo Estimado</th>
                             <th scope="col">Situação</th>
+                            <th scope="col"></th>
                         </tr>
                     </thead>
-                    <tbody id="dados">
+                    <tbody id="agendamentos">
                     </tbody>
                 </table>
                 
@@ -396,7 +393,7 @@
 
   <!-- Project JS Files -->
   <script src="assets/js/me.js"></script>
-  <script src="assets/js/agendamentos/listagem.js"></script>
+  <script src="assets/js/agendamentos/listagem_cliente.js"></script>
     <script src="assets/js/agendamentos/atualiza.js"></script>
 
 </body>

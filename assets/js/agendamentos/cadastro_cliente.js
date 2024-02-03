@@ -45,8 +45,6 @@ document.getElementById('cad_agendamento').addEventListener('submit', function(e
     event.preventDefault();
 
     var date = document.getElementById('date').value;
-    var tempo_estimado = document.getElementById('total_expected_time').value;
-    var valor_estimado = document.getElementById('total_cost').value;
 
     var services = [];
     var tabelaServicos = document.getElementById('selected_services');
@@ -74,8 +72,8 @@ document.getElementById('cad_agendamento').addEventListener('submit', function(e
             body: JSON.stringify({
                 date: date,
                 cpf: cpf,
-                total_cost: valor_estimado,
-                total_expected_time: tempo_estimado,
+                total_cost: 0.0,
+                total_expected_time: "00:00",
                 services: services
             })
             

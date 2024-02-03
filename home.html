@@ -205,8 +205,8 @@
 
           <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
             <li class="dropdown-header">
-              <h6>Kevin Anderson</h6>
-              <span>Web Designer</span>
+              <h6  id="profile_name"></h6>
+              <span></span>
             </li>
             <li>
               <hr class="dropdown-divider">
@@ -326,11 +326,6 @@
               <i class="bi bi-circle"></i><span>Cadastrar Agendamento</span>
             </a>
           </li>
-          <li>
-            <a href="forms-validation.html">
-              <i class="bi bi-circle"></i><span>Ordens de Serviço</span>
-            </a>
-          </li>
         </ul>
       </li><!-- End Forms Nav -->
     
@@ -341,15 +336,16 @@
         <ul id="financeiro-nav" class="nav-content collapse " data-bs-parent="#sidebar-nav">
           
           <li>
-            <a href="new_mecanico.html">
-              <i class="bi bi-circle"></i><span>Cadastrar Mecânicos</span>
-            </a>
-          </li>
-          <li>
             <a href="list_mecanicos.html">
               <i class="bi bi-circle"></i><span>Listar Mecânicos</span>
             </a>
           </li>
+          <li>
+            <a href="new_mecanico.html">
+              <i class="bi bi-circle"></i><span>Cadastrar Mecânicos</span>
+            </a>
+          </li>
+          
         </ul>
       </li><!-- End Forms Nav -->
     </ul>
@@ -400,8 +396,8 @@
                       <i class="bi bi-check-circle"></i>
                     </div>
                     <div class="ps-3">
-                      <h6>25</h6>
-                      <span class="text-success small pt-1 fw-bold">85%</span> <span class="text-muted small pt-2 ps-1">Completada</span>
+                      <h6>2</h6>
+                      <span class="text-success small pt-1 fw-bold">0%</span> <span class="text-muted small pt-2 ps-1">Completada</span>
 
                     </div>
                   </div>
@@ -435,7 +431,7 @@
                       <i class="bi bi-info-circle"></i>
                     </div>
                     <div class="ps-3">
-                      <h6>287</h6>
+                      <h6>28</h6>
                       <span class="text-success small pt-1 fw-bold">72%</span> <span class="text-muted small pt-2 ps-1">Executados</span>
 
                     </div>
@@ -471,7 +467,7 @@
                       <i class="bi bi-people"></i>
                     </div>
                     <div class="ps-3">
-                      <h6>12</h6>
+                      <h6>1</h6>
                      
 
                     </div>
@@ -591,6 +587,7 @@
                         <th scope="col">Custo Estimado</th>
                         <th scope="col">Tempo Estimado</th>
                         <th scope="col">Situação</th>
+                        <th scope="col"></th>
                       </tr>
                     </thead>
                     <tbody id="dados">

@@ -33,8 +33,10 @@ document.addEventListener("DOMContentLoaded", function() {
                                        <td>
                                         <button id="cancelar" class="btn btn-danger btn-sm"><i id="bt_cancela" data-id="${agendamento.id}"class="bi bi-backspace-reverse-fill"></i></button>
                                        </td></tr>`;
-                    h6posicao.textContent = agendamento.position;
-                    h6tempo.textContent = agendamento.total_expected_time
+                    if(agendamento.position>0){
+                        h6posicao.textContent = agendamento.position;
+                        h6tempo.textContent = agendamento.total_expected_time
+                    }
                 });
                 
             } else {
